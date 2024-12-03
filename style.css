@@ -1,5 +1,6 @@
 main{
     display: flex;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 .container{
     display: flex;
@@ -128,4 +129,7 @@ ol{
 .penutup .atas{
     margin-bottom: -10px;
     font-size: 20px;
+}
+#hasilBMI{
+    font-size: 50px;
 }
