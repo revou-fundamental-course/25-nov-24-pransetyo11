@@ -1,62 +1,93 @@
-main{
-    display: flex;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+/* Menghilangkan scroll horizontal pada halaman */
+body {
+    overflow-x: hidden;
 }
-.container{
+
+/* Mengatur tata letak elemen utama */
+main {
     display: flex;
-    justify-content: space-evenly;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-.calculator{
-    width: 60%;
+
+/* Kontainer utama untuk elemen fleksibel */
+.container {
+    display: flex;
+    flex-direction: row; /* Elemen berjejer secara horizontal */
+    justify-content: space-evenly; /* Spasi merata di antara elemen */
+}
+
+/* Area kalkulator */
+.calculator {
+    width: 60%; /* Lebar 60% dari kontainer */
     height: 100%;
-    padding: 5px;
-    padding-right: 25px;
-    margin-right: 10px;
-    text-align: justify;
-    background-color: white;
-    border-radius: 15px;
+    padding: 5px 25px 5px 5px; /* Padding internal */
+    margin-right: 10px; /* Jarak dengan elemen lainnya */
+    text-align: justify; /* Teks rata kiri-kanan */
+    background-color: white; /* Latar belakang putih */
+    border-radius: 15px; /* Sudut membulat */
 }
-footer{
+
+/* Footer dengan teks rata tengah */
+footer {
     text-align: center;
     margin-top: 20px;
 }
-form{
-    background-color: lightblue;
-    width: fit-content;
-    margin-right: 30px;
-    padding: 15px;
-    border-radius: 10px;    
-    box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+
+/* Tampilan form */
+form {
+    background-color: lightblue; /* Latar belakang biru muda */
+    width: fit-content; /* Menyesuaikan lebar dengan konten */
+    margin-right: 30px; /* Jarak dengan elemen lain */
+    padding: 15px; /* Ruang dalam form */
+    border-radius: 10px; /* Sudut membulat */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); /* Efek bayangan */
 }
-.form-item{
-    display: flex;
+
+/* Item dalam form menggunakan grid */
+.form-item {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Kolom label dan input */
+    gap: 10px; /* Jarak antar-elemen */
     justify-content: space-between;
-    margin: 8px 3px;
+    margin: 8px 3px; /* Margin antar item */
+    font-size: 1rem; /* Ukuran teks */
+    width: 100%; 
 }
-input[type="number"]{
+
+/* Gaya input angka */
+input[type="number"] {
     border: 1px solid black;
     border-radius: 6px;
     height: 25px;
 }
+
+/* Gaya label untuk elemen tertentu */
 label[for="tinggi-badan"],
 label[for="usia"],
-label[for="berat-badan"]{
+label[for="berat-badan"] {
     margin-top: 5px;
     margin-right: 20px;
     margin-left: -3px;
 }
-label[for="tinggi-badan"]{
+
+label[for="tinggi-badan"] {
     margin-bottom: 12px;
 }
-.jenis-kelamin{
+
+/* Gaya untuk elemen jenis kelamin */
+.jenis-kelamin {
     margin-top: 5px;
     margin-left: -7px;
 }
-.tombol{
+
+/* Gaya tombol */
+.tombol {
     display: inline-block;
     gap: 5px;
 }
-.tombol-hitung, .tombol-download{
+
+/* Tombol untuk hitung dan download */
+.tombol-hitung, .tombol-download {
     padding: 8px 8px;
     font-size: 12px;
     color: black;
@@ -64,14 +95,16 @@ label[for="tinggi-badan"]{
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     letter-spacing: 1px;
     transition: all 0.3s ease;
 }
+
+/* Tombol konsultasi, registrasi, dll. */
 .tombol-konsultasi, 
 .tombol-registrasi, 
 .konsultasi-dokter, 
-.registrasi-dokter{
+.registrasi-dokter {
     padding: 8px 8px;
     font-size: 12px;
     color: black;
@@ -79,12 +112,14 @@ label[for="tinggi-badan"]{
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     letter-spacing: 1px;
     transition: all 0.3s ease;
     margin-top: 8px;
 }
-.tombol-reset{
+
+/* Tombol reset */
+.tombol-reset {
     padding: 8px 8px;
     font-size: 12px;
     color: black;
@@ -92,44 +127,75 @@ label[for="tinggi-badan"]{
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     letter-spacing: 1.5px;
     transition: all 0.3s ease;
 }
-.hasil{
+
+/* Area hasil */
+.hasil {
     width: 40%;
     text-align: justify;
     padding: 5px;
     border-radius: 15px;
 }
-.tampil-hasil{
+
+/* Tampilan hasil BMI */
+.tampil-hasil {
     text-align: center;
     background-color: lightblue;
     padding: 0.5px;
     width: 100%;
     padding-bottom: 8px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
 }
-ol{
+
+/* Gaya list */
+ol {
     text-align: left;
     margin-left: -25px;
 }
-.fitur p{
+
+/* Gaya fitur */
+.fitur p {
     font-size: 20px;
     margin-bottom: -8px;
 }
-.penutup{
+
+/* Gaya penutup */
+.penutup {
     text-align: center;
     background-color: lightblue;
     padding: 5px;
     border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
 }
-.penutup .atas{
+
+/* Sub-bagian dalam penutup */
+.penutup .atas {
     margin-bottom: -10px;
     font-size: 20px;
 }
-#hasilBMI{
+
+/* Ukuran teks hasil BMI */
+#hasilBMI {
     font-size: 50px;
 }
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Elemen disusun secara vertikal */
+    }
+
+    .calculator, .hasil {
+        width: 100%; /* Elemen menjadi full-width */
+    }
+
+    .form-item input {
+        width: 100%; /* Input field menjadi penuh */
+    }
+}
+
+
